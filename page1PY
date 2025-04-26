@@ -1,0 +1,28 @@
+# app.py
+import streamlit as st
+import requests as rt
+
+class MeuApp:
+    def __init__(self):
+        self.titulo = "Meu App com Orientação a Objetos"
+        self.mensagem = "Bem-vindo ao meu app básico usando Streamlit com OOP!"
+
+    def exibir(self):
+        st.title(self.titulo)
+        st.write(self.mensagem)
+
+class Raspagem(MeuApp):
+    def __init__(self):
+        super().__init__()
+        self.url = ""
+        self.headers = {}
+        self.APIkey = "5b25734efeb483321e60dc7a"
+    def exibir_raspagem(self):
+        st.write(self.url)
+        st.write(self.headers)
+        st.write(self.APIkey)
+
+if __name__ == "__main__":
+    app = Raspagem()
+    app.exibir()
+    app.exibir_raspagem()
